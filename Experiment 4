@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<unistd.h>
+int main() {
+   int cpr;
+   cpr = fork();
+   if(cpr < 0) {
+      printf("Fork failed to crate process\n");
+   } else if(cpr == 0) {
+      printf("Process Created\n");
+      printf("Process id of the child process %d\n", getpid());
+      printf("Process id of the parent process %d\n", getppid());
+   }
+   print("In parent process\n");
+   return 0;
+}
