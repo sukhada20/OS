@@ -1,0 +1,27 @@
+#!/bin/bash
+echo "Enter total marks:"
+read total
+echo "Enter marks obtained:"
+read obtained
+percentage=$(echo "scale=2; ($obtained/$total)*100" | bc)
+echo "Percentage: $percentage%"
+passmark=35
+is_pass=$(echo "$percentage >= $passmark" | bc)
+if [ "$is_pass" -eq 1 ]
+then
+    echo "Result: PASS"
+else
+    echo "Result: FAIL"
+fi
+
+
+
+#!/bin/bash
+echo "Enter a number:"
+read num
+if (( num % 2 == 0 ))
+then
+    echo "$num is Even."
+else
+    echo "$num is Odd."
+fi
